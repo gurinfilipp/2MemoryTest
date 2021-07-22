@@ -45,12 +45,9 @@ final class ContactCell: UITableViewCell {
     func configure(with contact: CNContact) {
         nameLabel.text = contact.givenName
         guard let phoneNumber = contact.phoneNumbers.first else {
-            print("else statement for contact \(contact.givenName)")
             phoneLabel.text = "Номер телефона отсутствует"
-            print("no phone for \(contact.givenName)")
             return
         }
         phoneLabel.text = phoneNumber.value.stringValue
     }
-    
 }

@@ -50,17 +50,27 @@ class MainViewController: UIViewController {
     }
     
     private func fetchContacts() {
-        print("fetching")
         let store = CNContactStore()
         
         store.requestAccess(for: .contacts) { access, error in
-            if let error = error {
-                print(error.localizedDescription)
-                return
+            if error != nil {
+                let alertController = UIAlertController (title: "Нет доступа к контактам", message: "Разрешить доступ к контактам в настройках?", preferredStyle: .alert)
+                    let settingsAction = UIAlertAction(title: "Настройки", style: .default) { (_) -> Void in
+                        guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+                            return
+                        }
+                        if UIApplication.shared.canOpenURL(settingsUrl) {
+                                   UIApplication.shared.open(settingsUrl, completionHandler: nil)
+                               }
+                    }
+                    alertController.addAction(settingsAction)
+                    let cancelAction = UIAlertAction(title: "Отмена", style: .default, handler: nil)
+                    alertController.addAction(cancelAction)
+
+                self.present(alertController, animated: true, completion: nil)
+                
             }
             if access {
-                print("we have acess")
-                
                 let keys = [CNContactGivenNameKey, CNContactPhoneNumbersKey]
                 let request = CNContactFetchRequest(keysToFetch: keys as [CNKeyDescriptor])
                 
@@ -69,7 +79,7 @@ class MainViewController: UIViewController {
                     
                 }
             } else {
-                print("we dont have acess")
+                self.tableView.refreshControl?.beginRefreshing()
             }
             
         }
@@ -105,5 +115,8 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         return 79
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
     
 }
