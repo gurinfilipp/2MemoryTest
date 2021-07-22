@@ -17,7 +17,11 @@ class MainViewController: UIViewController {
         return tableView
     }()
     
-    var contactsArray: [CNContact] = []
+    var contactsArray: [CNContact] = [] {
+        didSet {
+            self.contactsArray = sortArray(array: self.contactsArray)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,8 +32,6 @@ class MainViewController: UIViewController {
         
         tableViewSetup()
         ContactsManager.shared.fetchContacts(for: self)
-        
-        self.contactsArray = sortArray(array: self.contactsArray)
     }
     
     private func tableViewSetup() {
@@ -58,7 +60,7 @@ class MainViewController: UIViewController {
     
     private func sortArray(array: [CNContact]) -> [CNContact] {
         let newArray = array.sorted {
-            $0.givenName < $1.givenName
+            $0.givenName.lowercased() < $1.givenName.lowercased()
         }
         return newArray
     }
