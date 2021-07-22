@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,7 @@
 		C76CA6C026A9D3160037FB24 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76CA6BF26A9D3160037FB24 /* MainViewController.swift */; };
 		C76CA6C526A9D3170037FB24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C76CA6C426A9D3170037FB24 /* Assets.xcassets */; };
 		C76CA6C826A9D3170037FB24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C76CA6C626A9D3170037FB24 /* LaunchScreen.storyboard */; };
+		C76CA6D026A9D9CB0037FB24 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76CA6CF26A9D9CB0037FB24 /* ContactCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		C76CA6C426A9D3170037FB24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C76CA6C726A9D3170037FB24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C76CA6C926A9D3170037FB24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C76CA6CF26A9D9CB0037FB24 /* ContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
 		D083F6A1428B7732DF52F1FD /* Pods-2MemoryTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2MemoryTest.debug.xcconfig"; path = "Target Support Files/Pods-2MemoryTest/Pods-2MemoryTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -52,7 +54,6 @@
 				D083F6A1428B7732DF52F1FD /* Pods-2MemoryTest.debug.xcconfig */,
 				05A2AA0B9756A7A9EB9A61B4 /* Pods-2MemoryTest.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -82,6 +83,7 @@
 				C76CA6C426A9D3170037FB24 /* Assets.xcassets */,
 				C76CA6C626A9D3170037FB24 /* LaunchScreen.storyboard */,
 				C76CA6C926A9D3170037FB24 /* Info.plist */,
+				C76CA6CF26A9D9CB0037FB24 /* ContactCell.swift */,
 			);
 			path = 2MemoryTest;
 			sourceTree = "<group>";
@@ -199,6 +201,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C76CA6D026A9D9CB0037FB24 /* ContactCell.swift in Sources */,
 				C76CA6C026A9D3160037FB24 /* MainViewController.swift in Sources */,
 				C76CA6BC26A9D3160037FB24 /* AppDelegate.swift in Sources */,
 			);
