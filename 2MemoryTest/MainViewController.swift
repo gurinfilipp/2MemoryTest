@@ -28,6 +28,8 @@ class MainViewController: UIViewController {
         
         tableViewSetup()
         ContactsManager.shared.fetchContacts(for: self)
+        
+        self.contactsArray = sortArray(array: self.contactsArray)
     }
     
     private func tableViewSetup() {
@@ -52,6 +54,13 @@ class MainViewController: UIViewController {
         ContactsManager.shared.fetchContacts(for: self)
         tableView.refreshControl?.endRefreshing()
         tableView.reloadData()
+    }
+    
+    private func sortArray(array: [CNContact]) -> [CNContact] {
+        let newArray = array.sorted {
+            $0.givenName < $1.givenName
+        }
+        return newArray
     }
     
 }
