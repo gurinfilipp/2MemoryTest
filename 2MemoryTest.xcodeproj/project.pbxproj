@@ -82,16 +82,56 @@
 		C76CA6BA26A9D3160037FB24 /* 2MemoryTest */ = {
 			isa = PBXGroup;
 			children = (
+				C76CA6D926AA11FD0037FB24 /* Managers */,
+				C76CA6D826AA11F10037FB24 /* View */,
+				C76CA6D726AA11EA0037FB24 /* Controller */,
+				C76CA6D626AA11E30037FB24 /* Extensions */,
+				C76CA6D526AA11CA0037FB24 /* Additional */,
+			);
+			path = 2MemoryTest;
+			sourceTree = "<group>";
+		};
+		C76CA6D526AA11CA0037FB24 /* Additional */ = {
+			isa = PBXGroup;
+			children = (
 				C76CA6BB26A9D3160037FB24 /* AppDelegate.swift */,
-				C76CA6BF26A9D3160037FB24 /* MainViewController.swift */,
-				C76CA6CF26A9D9CB0037FB24 /* ContactCell.swift */,
-				C76CA6D126A9EEAF0037FB24 /* ContactsManager.swift */,
-				C76CA6D326A9F07D0037FB24 /* MainViewController+extension.swift */,
 				C76CA6C926A9D3170037FB24 /* Info.plist */,
 				C76CA6C426A9D3170037FB24 /* Assets.xcassets */,
 				C76CA6C626A9D3170037FB24 /* LaunchScreen.storyboard */,
 			);
-			path = 2MemoryTest;
+			path = Additional;
+			sourceTree = "<group>";
+		};
+		C76CA6D626AA11E30037FB24 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C76CA6D326A9F07D0037FB24 /* MainViewController+extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C76CA6D726AA11EA0037FB24 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C76CA6BF26A9D3160037FB24 /* MainViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C76CA6D826AA11F10037FB24 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C76CA6CF26A9D9CB0037FB24 /* ContactCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C76CA6D926AA11FD0037FB24 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				C76CA6D126A9EEAF0037FB24 /* ContactsManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,7 +393,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SN4W946MBP;
-				INFOPLIST_FILE = 2MemoryTest/Info.plist;
+				INFOPLIST_FILE = 2MemoryTest/Additional/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -373,7 +413,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SN4W946MBP;
-				INFOPLIST_FILE = 2MemoryTest/Info.plist;
+				INFOPLIST_FILE = 2MemoryTest/Additional/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
