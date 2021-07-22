@@ -29,7 +29,7 @@ class MainViewController: UIViewController {
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
         tableView.register(ContactCell.self, forCellReuseIdentifier: "ContactCell")
-       
+        tableView.separatorInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
         
         title = "Контакты"
         
@@ -39,7 +39,6 @@ class MainViewController: UIViewController {
         
         tableView.refreshControl = refreshControl
         
-        view.backgroundColor = .yellow
         
         fetchContacts()
     }
@@ -95,6 +94,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ContactCell", for: indexPath) as? ContactCell else {
             return .init()
         }
+    
         
         cell.configure(with: contactsArray[indexPath.row])
         
@@ -102,7 +102,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 145
+        return 79
     }
     
     

@@ -15,14 +15,13 @@ final class ContactCell: UITableViewCell {
     private let nameLabel: UILabel = {
        let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 20, weight: .medium)
-        label.backgroundColor = .red
         return label
     }()
     
     private let phoneLabel: UILabel = {
        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 20, weight: .light)
-        label.backgroundColor = .green
+        
+        label.font = UIFont.systemFont(ofSize: 18, weight: .light)
         return label
     }()
     
@@ -39,18 +38,19 @@ final class ContactCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        nameLabel.pin.left(15).top(15).height(50).width(200)
-        phoneLabel.pin.below(of: nameLabel).marginTop(15).left(15).height(50).horizontally(15)
+        nameLabel.pin.left(15).top(8).height(25).width(200)
+        phoneLabel.pin.below(of: nameLabel).marginTop(8).left(15).height(30).horizontally(15)
     }
     
     func configure(with contact: CNContact) {
         nameLabel.text = contact.givenName
-        guard let phoneNumber = contact.phoneNumbers.first?.value.stringValue else {
-            phoneLabel.font = UIFont.systemFont(ofSize: 16, weight: .ultraLight)
-            phoneLabel.text = "У данного контакта отсутствует номер телефона"
+        guard let phoneNumber = contact.phoneNumbers.first else {
+            print("else statement for contact \(contact.givenName)")
+            phoneLabel.text = "Номер телефона отсутствует"
+            print("no phone for \(contact.givenName)")
             return
         }
-        phoneLabel.text = phoneNumber
+        phoneLabel.text = phoneNumber.value.stringValue
     }
     
 }
