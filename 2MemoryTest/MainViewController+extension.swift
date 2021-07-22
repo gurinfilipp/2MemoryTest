@@ -28,6 +28,13 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("calling \(contactsArray[indexPath.row].givenName)")
+//        guard let url = URL(string: "tel://\(contactsArray[indexPath.row].phoneNumbers.first?.value.stringValue)") else {
+//            return
+//        }
+        let callNumber = "79253247010"
+        if let url = URL(string: "tel://\(callNumber)") {
+            print(url)
+        UIApplication.shared.open(url)
     }
-    
+    }
 }
