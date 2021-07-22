@@ -23,10 +23,11 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 79
+        return 80
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         guard let callNumber = contactsArray[indexPath.row].phoneNumbers.first?.value.stringValue else {
             return
         }
@@ -36,8 +37,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
             callNumberFormatted = callNumberFormatted.replacingOccurrences(of: symbolsToDelete[symbol], with: "")
         }
         if let url = URL(string: "tel://\(callNumberFormatted)") {
-        UIApplication.shared.open(url)
-    }
-        tableView.deselectRow(at: indexPath, animated: true)
+            UIApplication.shared.open(url)
+        }
     }
 }

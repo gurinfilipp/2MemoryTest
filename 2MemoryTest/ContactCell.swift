@@ -36,8 +36,8 @@ final class ContactCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        nameLabel.pin.left(15).top(8).height(25).width(200)
-        phoneLabel.pin.below(of: nameLabel).marginTop(8).left(15).height(30).horizontally(15)
+        nameLabel.pin.left(15).top(12).height(25).horizontally(15)
+        phoneLabel.pin.bottom(12).left(15).height(23).horizontally(15)
     }
     
     func configure(with contact: CNContact) {
